@@ -484,7 +484,7 @@ class SortablePane extends React.Component<SortablePaneProps, State> {
     e: React.TouchEvent<HTMLElement>,
     child: React.ReactElement<PaneProps>,
   ) {
-    if (child.props.onTouchStart) child.props.onTouchStart(e);
+    if (child.props && child.props.onTouchStart) child.props.onTouchStart(e);
     this.handleMouseDown(key, x, y, e);
   }
 

@@ -1,7 +1,7 @@
 {
-  "name": "react-sortable-pane",
-  "version": "1.0.4",
-  "title": "react-sortable-pane",
+  "name": "@jonnyopenear/react-sortable-pane",
+  "version": "1.0.13",
+  "title": "@jonnyopenear/react-sortable-pane",
   "main": "./lib/react-sortable-pane.es5.js",
   "module": "./lib/react-sortable-pane.js",
   "jsnext:main": "./lib/react-sortable-pane.js",
@@ -78,7 +78,7 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "build-storybook": "build-storybook",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "format": "prettier-eslint --write --single-quote --semi=true \"src/**/*.js\" ",
     "deploy": "npm run build-storybook && gh-pages -d storybook-static"
   },

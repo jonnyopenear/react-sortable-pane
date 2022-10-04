@@ -459,7 +459,7 @@ class SortablePane extends React.Component<SortablePaneProps, State> {
     }
   }
 
-  handleMove({ pageX, pageY }: { pageX: number; pageY: number }) {
+  handleMove({ pageX, pageY }: { pageX: number; pageY: number; }) {
     const { isPressed, delta, lastPressed, isResizing, panes } = this.state;
     if (isPressed && !isResizing) {
       const mouse = this.isHorizontal() ? pageX - delta : pageY - delta;
@@ -490,7 +490,9 @@ class SortablePane extends React.Component<SortablePaneProps, State> {
 
   handleTouchMove(e: TouchEvent) {
     e.preventDefault();
-    this.handleMove(e.touches[0]);
+    const { pageX, pageY } = e.touches[0];
+    const pageXTouch = pageX - 120;
+    this.handleMove({ pageX: pageXTouch , pageY });
   }
 
   handleMouseUp(e: MouseEvent | TouchEvent) {
